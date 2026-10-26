@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>QUADRANT FOCUS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="dashboard-mode">
+    <div id="settings_menu" class="settings-container">
+      <button id="settings_trigger" class="settings-trigger">Settings</button>
+      <div id="settings_dropdown" class="settings-dropdown">
+        <div class="setting-item">
+          <label for="theme_toggle">Dark Mode</label>
+          <input type="checkbox" id="theme_toggle" />
+        </div>
+        <div class="setting-item">
+          <label for="accent_picker">Theme</label>
+          <select id="accent_picker">
+            <option value="matcha" selected>Matcha</option>
+            <option value="salmon">Salmon</option>
+            <option value="blueberry">Blueberry</option>
+            <option value="burgundy">Burgundy</option>
+            <option value="concrete">Concrete</option>
+            <option value="banana">Banana</option>
+            <option value="lavender">Lavender</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <main class="container">
+      <section class="box bento-header dashboard-only">
+        <h1>QUADRANT FOCUS</h1>
+        <p>Organized Academics</p>
+      </section>
+
+      <section class="box bento-form dashboard-only">
+        <form id="coursework_form">
+          <input
+            type="text"
+            placeholder="Title"
+            id="coursework_title"
+            required
+          />
+          <input type="date" id="coursework_date" required />
+          <select id="coursework_value">
+            <option value="sum">Summative</option>
+            <option value="form">Formative</option>
+          </select>
+          <select id="coursework_duration">
+            <option value="15">15 Minutes</option>
+            <option value="25" selected>25 Minutes</option>
+            <option value="35">35 Minutes</option>
+            <option value="45">45 Minutes</option>
+            <option value="60">60 Minutes</option>
+          </select>
+          <button type="submit" id="coursework_submit">Submit</button>
+        </form>
+      </section>
+
+      <section class="box bento-list dashboard-only">
+        <div id="coursework_area"></div>
+      </section>
+
+      <section class="box bento-start dashboard-only">
+        <button id="initial_start_study" class="no-wiggle">
+          Start Work Session
+        </button>
+      </section>
+
+      <section class="box study-timer study-only">
+        <h3 id="active_status">Work Mode</h3>
+        <h2 id="active_time">25:00</h2>
+      </section>
+
+      <section class="box study-current study-only">
+        <div id="main_study" class="study-current-display"></div>
+        <div id="next_task_info" class="next-info">Next Up: None</div>
+      </section>
+
+      <section class="box study-stats study-only">
+        <div id="study_stats_area">
+          <h3>Statistics</h3>
+          <p>Total Sessions Completed: <span id="total_sessions">0</span></p>
+          <p>
+            Total Assignments Completed: <span id="completed_count">0</span>
+          </p>
+          <p>Total Working Time: <span id="total_work_time">00:00</span></p>
+          <p>Current Work Streak: <span id="current_streak">0</span></p>
+          <p>Highest Work Streak: <span id="highest_streak">0</span></p>
+        </div>
+      </section>
+
+      <section class="box study-controls study-only">
+        <div class="button-group">
+          <button id="start_study">Resume Timer</button>
+          <button id="pause_study">Pause Timer</button>
+          <button id="complete_study">Complete Assignment</button>
+          <button id="reset_study">End Session</button>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
